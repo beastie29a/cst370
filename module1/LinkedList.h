@@ -20,7 +20,8 @@ public:
 
    void display(ostream & out) const;
    ElementType sum();
-   T maxItem();
+   ElementType maxItem();
+   bool isAscendingOrder();
    void substring(char a, char b);
    /*--------------------------------------------------------------------
     Display the contensts of this LinkedList.
@@ -194,7 +195,7 @@ ElementType LinkedList<T>::sum()
    return total;
 }
 template <class T>
-T LinkedList<T>::maxItem()
+ElementType LinkedList<T>::maxItem()
 {
    T maxElement = 0;
    Node * predPtr = first;
@@ -207,6 +208,22 @@ T LinkedList<T>::maxItem()
       predPtr = predPtr->next;
    }
    return maxElement;
+   
+}
+
+template <class T>
+bool LinkedList<T>::isAscendingOrder()
+{
+   Node * predPtr = first;
+
+   for( int i = 0; i < mySize; i++)
+   {
+      if ( predPtr->data > predPtr->next->data )
+         return false;
+      predPtr = predPtr->next;
+   }
+
+   return true;
    
 }
 
