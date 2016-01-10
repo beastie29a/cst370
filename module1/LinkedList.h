@@ -200,6 +200,12 @@ ElementType LinkedList<T>::maxItem()
    T maxElement = 0;
    Node * predPtr = first;
 
+   if ( mySize == 1 )
+      return predPtr->data;
+
+   if ( mySize == 0 )
+      return -1;
+
    for( int i = 0; i < mySize; i++)
    {
       if ( maxElement < predPtr->data )
@@ -216,15 +222,16 @@ bool LinkedList<T>::isAscendingOrder()
 {
    Node * predPtr = first;
 
+   if ( mySize <= 1 )
+      return true;
+
    for( int i = 0; i < mySize; i++)
    {
       if ( predPtr->data > predPtr->next->data )
          return false;
       predPtr = predPtr->next;
    }
-
    return true;
-   
 }
 
 template <class T>

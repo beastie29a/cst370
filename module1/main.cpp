@@ -9,13 +9,28 @@ int main()
 
    // Test the class constructor
    LinkedList<int> intList;
+
+   // Test Empty List
+   cout << "\nMax Element: " << intList.maxItem() << endl;
+   if ( intList.isAscendingOrder() )
+      cout << "Ascending Order";
+   else
+      cout << "Not Ascending Order";
+   cout << endl;
+
    cout << "Constructing intList\n";
 
    // Test insert()
    intList.insert(100, 0);
    intList.display(cout);
-   cout << endl;
+   // Tests for single element
+   cout << "\nMax Element: " << intList.maxItem() << endl;
    cout << "Total Sum: " << intList.sum() << endl;
+   if ( intList.isAscendingOrder() )
+      cout << "Ascending Order";
+   else
+      cout << "Not Ascending Order";
+   cout << endl;
 
    intList.insert(200, 0);
    intList.display(cout);
@@ -31,9 +46,19 @@ int main()
    intList.display(cout);
    cout << endl;
    cout << "Total Sum: " << intList.sum() << endl;
+   if ( intList.isAscendingOrder() )
+      cout << "Ascending Order";
+   else
+      cout << "Not Ascending Order";
+   cout << endl;
 
    intList.insert(500, 3);
    intList.display(cout);
+   cout << endl;
+   if ( intList.isAscendingOrder() )
+      cout << "Ascending Order";
+   else
+      cout << "Not Ascending Order";
    cout << endl;
 
    cout << "\nMax Element: " << intList.maxItem() << endl;
