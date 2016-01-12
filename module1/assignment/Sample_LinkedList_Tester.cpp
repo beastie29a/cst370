@@ -19,12 +19,18 @@ int main()
    LinkedList charList;
    string userInput;
 
+   // Ask for input
    cout << "Enter a string: ";
    cin >> userInput;
+   // Loop through string and insert into
+   // LinkedList type char
    for ( char c : userInput )
       charList.add( c );
 
+   // Display the items
    charList.display(cout);
    cout << endl;
+   // Search for substrings
    charList.substring('A', 'B');
+   return 0;
 }

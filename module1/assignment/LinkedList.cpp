@@ -128,6 +128,8 @@ void LinkedList::display(ostream & out) const
 //-- Definition of add()
 void LinkedList::add(ElementType dataVal)
 {
+   // Inset into the last element
+   // which is mySize
    (*this).insert(dataVal,mySize);
 }
 
@@ -142,24 +144,35 @@ void LinkedList::substring( char c1, char c2 )
    // Loop can end one less than mySize
    for ( int i = 0; i < mySize - 1; i++)
    {
+      // Check is the first node has the char
       if ( c1 == predPtr1->data )
       {
-         outString = predPtr1->data; 
+         // Assign the first char to the output string
+         outString = predPtr1->data;
+         // Prepare the second iteration
          predPtr2 = predPtr1->next;
          for ( int j = i + 1; j < mySize; j++)
          {
+            // See if the second iterators data
+            // matches the second char
             if ( c2 == predPtr2->data)
             {
                count++;
+               // Append char to strign
                outString += predPtr2->data;
+               // Output string and information
                cout << "Substring " << count << ":" << outString << endl;
             }
             else
+               // Append char to string
                outString += predPtr2->data;
+            // Move to next node on second iter
             predPtr2 = predPtr2->next;
          }
       }
+      // Move to next node on first iter
       predPtr1 = predPtr1->next;
    }
+   // Output information
    cout << "Total " << count << " substrings";
 }
