@@ -9,7 +9,7 @@
 ****************************************/
 
 #include <iostream>
-#include "Stack.hpp"
+#include "Stack.h"
 
 using namespace std;
 
@@ -37,6 +37,12 @@ void checkStack( Stack* one, Stack* two)
    }
 }
 
+void clearStack(Stack* stack)
+{
+   while(!stack->empty())
+      stack->pop();
+}
+
 int main() {
 
    Stack assignmentStack1;
@@ -51,10 +57,21 @@ int main() {
    assignmentStack1.push(10);
    assignmentStack1.push(-5);
 
-   checkStack(&assignmentStack1, &assignmentStack2);
-
+   cout << "Displaying Stacks before sort -" << endl;
+   cout << "Stack One: ";
    assignmentStack1.display(cout);
    cout << endl;
+   cout << "Stack Two: ";
+   assignmentStack2.display(cout);
+   cout << endl;
+
+   checkStack(&assignmentStack1, &assignmentStack2);
+
+   cout << "After sort -" << endl;
+   cout << "Stack One: ";
+   assignmentStack1.display(cout);
+   cout << endl;
+   cout << "Stack Two: ";
    assignmentStack2.display(cout);
    cout << endl;
 
@@ -66,10 +83,21 @@ int main() {
    assignmentStack1.push(6);
    assignmentStack1.push(2);
 
-   checkStack(&assignmentStack1, &assignmentStack3);
-
+   cout << endl << "Displaying Stacks before sort -" << endl;
+   cout << "Stack One: ";
    assignmentStack1.display(cout);
    cout << endl;
+   cout << "Stack Two: ";
+   assignmentStack3.display(cout);
+   cout << endl;
+
+   checkStack(&assignmentStack1, &assignmentStack3);
+
+   cout << "After sort -" << endl;
+   cout << "Stack One: ";
+   assignmentStack1.display(cout);
+   cout << endl;
+   cout << "Stack Two: ";
    assignmentStack3.display(cout);
    cout << endl;
 
@@ -81,10 +109,21 @@ int main() {
    assignmentStack1.push(6);
    assignmentStack1.push(9);
 
-   checkStack(&assignmentStack1, &assignmentStack4);
-
+   cout << endl << "Displaying Stacks before sort -" << endl;
+   cout << "Stack One: ";
    assignmentStack1.display(cout);
    cout << endl;
+   cout << "Stack Two: ";
+   assignmentStack4.display(cout);
+   cout << endl;
+
+   checkStack(&assignmentStack1, &assignmentStack4);
+
+   cout << "After sort -" << endl;
+   cout << "Stack One: ";
+   assignmentStack1.display(cout);
+   cout << endl;
+   cout << "Stack Two: ";
    assignmentStack4.display(cout);
    cout << endl;
 

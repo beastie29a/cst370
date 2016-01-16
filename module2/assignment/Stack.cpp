@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-#include "Stack.hpp"
+#include "Stack.h"
 
 //--- Definition of Stack constructor
 Stack::Stack()
@@ -40,7 +40,7 @@ void Stack::display(ostream & out) const
    for (int i = myTop; i >= 0; i--)
    {
       out << myArray[i];
-      out << " ";
+      out << ", ";
    }
 }
 
@@ -51,7 +51,7 @@ StackElement Stack::top() const
       return (myArray[myTop]);
    else
    {
-      cerr << "*** Stack is empty -- returning garbage value ***\n";
+      //cerr << "*** Stack is empty -- returning garbage value ***\n";
       StackElement garbage = 0;
       return garbage;
    }
@@ -62,6 +62,6 @@ void Stack::pop()
 {
    if ( !empty() )
       myTop--;
-   else
-      cerr << "*** Stack is empty -- can't remove a value ***\n";
+   //else
+      //cerr << "*** Stack is empty -- can't remove a value ***\n";
 }
