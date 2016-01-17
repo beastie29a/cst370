@@ -1,11 +1,13 @@
-//
-//  main.cpp
-//  CST370-module2
-//
-//  Created by Robert Contreras on 1/14/16.
-//  Copyright © 2016 Robert Contreras. All rights reserved.
-//
-
+/****************************************
+*
+* Title: CST 370 Lab 2 Part
+* Abstract: Reverse the output of a string input
+* Abstract: Convert Decimal input into Binary strings
+* Author: Robert Contreras
+* ID: cont5739
+* Date: Tuesday, Jan 19
+*
+****************************************/
 #include <iostream>
 #include "Stack.h"
 
