@@ -4,7 +4,7 @@
 * Abstract: Look for characters to indicate footnote
 * Author: Robert Contreras
 * ID: cont5739
-* Date: Tuesday, Jan 19
+* Date: Tuesday, Jan 26
 *
 ****************************************/
 #include <iostream>
