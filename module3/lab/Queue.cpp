@@ -40,7 +40,7 @@ void Queue::display(ostream & out) const
 {
    for (int i = myFront; i != myBack; i = (i + 1)%QUEUE_CAPACITY)
       out << myArray[i];
-   cout << endl;
+   //cout << endl;
 }
 
 //--- Definition of front()

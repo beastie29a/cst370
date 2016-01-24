@@ -37,7 +37,10 @@ int main()
       {
          // Look for end char }
          if ( c == '}' )
+         {
+            q1.enqueue('\n');
             store = false;
+         }
          // Skip processing beginning char
          else if ( c == '{' )
             store = true;
@@ -46,9 +49,9 @@ int main()
             q1.enqueue(c);
       }
    }
+
    // Output the footnote
-   q1.display(cout); 
-   cout << endl; 
+   q1.display(cout);
    // Close the file
    sample.close();
    return 0;
