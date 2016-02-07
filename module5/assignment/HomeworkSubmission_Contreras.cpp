@@ -1,11 +1,13 @@
-//
-//  main.cpp
-//  CST370-module5
-//
-//  Created by Robert Contreras on 2/5/16.
-//  Copyright © 2016 Robert Contreras. All rights reserved.
-//
-
+/****************************************
+*
+* Title: CST 370 Assignment 5
+* Abstract: Use a selection sort algorithm
+*    to manipulate arrays
+* Author: Robert Contreras
+* ID: cont5739
+* Date: Tuesday, Feb 9
+*
+****************************************/
 #include <iostream>
 #include <array>
 using namespace std;
@@ -78,7 +80,7 @@ int main()
    return 0;
 
 }
-
+// selection algorithm
 void selectionSort( int numElements, int sortArray[], int arraySize )
 {
    int min, swapMin = 0;
@@ -97,19 +99,18 @@ void selectionSort( int numElements, int sortArray[], int arraySize )
       sortArray[i] = sortArray[min];
       sortArray[min] = swapMin;
    }
-
 }
-
+// method to print contents of array
 void printArray( int sortArray[], int printElements )
 {
    for (int i = 0 ; i < printElements ; i++)
       cout << sortArray[i] << ",";
    cout << endl;
 }
-
+// method to get the median value of an array
 double getMedianValue( int sortArray[], int arraySize )
 {
-   selectionSort( arraySize, sortArray, arraySize);
+   selectionSort( arraySize, sortArray, arraySize );
    if ( arraySize%2 == 0 )
    {
       return double(sortArray[arraySize/2] + sortArray[arraySize/2 - 1])/2;
