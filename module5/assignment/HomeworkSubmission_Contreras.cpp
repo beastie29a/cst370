@@ -124,7 +124,7 @@ void printArray( int sortArray[], int printElements )
       if ( i == printElements - 1 )
          cout << sortArray[i];
       else
-         cout << sortArray[i] << ",";
+         cout << sortArray[i] << ", ";
    }
    cout << endl;
 }
