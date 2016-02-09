@@ -26,18 +26,23 @@ int main()
    // Part 1
 
    // Array 1 Before
+   cout << "Array 1 before sort: ";
    printArray(toBeSorted1, arraySize1);
    selectionSort(arraySize1, toBeSorted1, arraySize1);
    // Array 1 After
+   cout << "Array 1 After sort: ";
    printArray(toBeSorted1, arraySize1);
 
    // Array 2 Before
+   cout << "Array 2 before sort: ";
    printArray(toBeSorted2, arraySize2);
    selectionSort(arraySize2, toBeSorted2, arraySize2);
    // Array 2 After
+   cout << "Array 2 After sort: ";
    printArray(toBeSorted2, arraySize2);
 
    // Part 2
+   cout << "Re-initializing arrays..." << endl;
    toBeSorted1[0] = 4;
    toBeSorted1[1] = 6;
    toBeSorted1[2] = 8;
@@ -67,7 +72,7 @@ int main()
       cin >> getK;
       cin.clear();
       cin.ignore(INT_MAX, '\n');
-   } while ( ( getK > arraySize1 && getK > arraySize2 ) || getK < 1 );
+   } while ( ( getK > arraySize1 || getK > arraySize2 ) || getK < 1 );
 
    cout << "First " << getK << " elements of Array 1: ";
    selectionSort(getK, toBeSorted1, arraySize1);
@@ -116,7 +121,7 @@ void printArray( int sortArray[], int printElements )
 // method to get the median value of an array
 double getMedianValue( int sortArray[], int arraySize )
 {
-   selectionSort( arraySize, sortArray, arraySize );
+   selectionSort( arraySize/2 + 1, sortArray, arraySize );
    if ( arraySize%2 == 0 )
    {
       return double(sortArray[arraySize/2] + sortArray[arraySize/2 - 1])/2;
