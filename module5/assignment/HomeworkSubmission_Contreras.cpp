@@ -12,12 +12,14 @@
 #include <array>
 using namespace std;
 
+// Define methods
 void selectionSort( int, int[], int );
 void printArray( int[], int );
 double getMedianValue( int[], int );
 
 int main()
 {
+   // Init arrays and sizes
    int arraySize1 = 10;
    int arraySize2 = 11;
    int toBeSorted1[10] = {4, 6, 8, 15, 20, 22, 10, 3, 9, 2};
@@ -67,6 +69,7 @@ int main()
    toBeSorted2[10] = -4;
    int getK;
 
+   // Get input from user with validation
    do {
       cout << "Enter the amount of elements to sort: ";
       cin >> getK;
@@ -117,7 +120,12 @@ void selectionSort( int numElements, int sortArray[], int arraySize )
 void printArray( int sortArray[], int printElements )
 {
    for (int i = 0 ; i < printElements ; i++)
-      cout << sortArray[i] << ",";
+   {
+      if ( i == printElements - 1 )
+         cout << sortArray[i];
+      else
+         cout << sortArray[i] << ",";
+   }
    cout << endl;
 }
 
