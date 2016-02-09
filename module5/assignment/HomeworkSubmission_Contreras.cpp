@@ -23,6 +23,8 @@ int main()
    int toBeSorted1[10] = {4, 6, 8, 15, 20, 22, 10, 3, 9, 2};
    int toBeSorted2[11] = {4, 6, 8, 15, 20, 22, 10, 3, 9, 2, -4};
 
+   // Part 1
+
    // Array 1 Before
    printArray(toBeSorted1, arraySize1);
    selectionSort(arraySize1, toBeSorted1, arraySize1);
@@ -60,8 +62,12 @@ int main()
    toBeSorted2[10] = -4;
    int getK;
 
-   cout << "Enter the amount of elements to sort: ";
-   cin >> getK;
+   do {
+      cout << "Enter the amount of elements to sort: ";
+      cin >> getK;
+      cin.clear();
+      cin.ignore(INT_MAX, '\n');
+   } while ( ( getK > arraySize1 && getK > arraySize2 ) || getK < 1 );
 
    cout << "First " << getK << " elements of Array 1: ";
    selectionSort(getK, toBeSorted1, arraySize1);
