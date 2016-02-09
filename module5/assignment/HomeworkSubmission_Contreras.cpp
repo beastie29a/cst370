@@ -91,6 +91,7 @@ int main()
    return 0;
 
 }
+
 // selection algorithm
 void selectionSort( int numElements, int sortArray[], int arraySize )
 {
@@ -111,6 +112,7 @@ void selectionSort( int numElements, int sortArray[], int arraySize )
       sortArray[min] = swapMin;
    }
 }
+
 // method to print contents of array
 void printArray( int sortArray[], int printElements )
 {
@@ -118,13 +120,18 @@ void printArray( int sortArray[], int printElements )
       cout << sortArray[i] << ",";
    cout << endl;
 }
+
 // method to get the median value of an array
 double getMedianValue( int sortArray[], int arraySize )
 {
+   // Sort array partially using Problem 2 logic
    selectionSort( arraySize/2 + 1, sortArray, arraySize );
+   // Check if array is even
    if ( arraySize%2 == 0 )
    {
+      // Return average of 2 median values
       return double(sortArray[arraySize/2] + sortArray[arraySize/2 - 1])/2;
    }
+   // Return median value
    return sortArray[arraySize/2];
 }
