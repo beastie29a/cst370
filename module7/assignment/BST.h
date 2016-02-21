@@ -13,6 +13,11 @@ public:
    bool search(const int & item) const;
    void insert(const int & item);
 
+   // Public methods for programming assignment
+   void inOrder();
+   void preOrder();
+   int nodeCount();
+
 private:
    /***** Node class *****/
    class BinNode
@@ -39,15 +44,12 @@ private:
    BinNode * myRoot;
    int nodes;
 
-// Mothods for programming assignment
-public:
+   // Private methods for programming assignment
    bool search(const int & item, BinNode * locptr) const;
-   void inOrder();
    void inOrder(BinNode * locptr);
-   void preOrder();
    void preOrder(BinNode * locptr);
-   int nodeCount();
    int nodeCount(BinNode * locptr);
+
 }; // end of class declaration
 
 #endif
