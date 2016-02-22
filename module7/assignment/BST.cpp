@@ -13,7 +13,7 @@ BST::BST()
 bool BST::empty() const
 { return myRoot == 0; }
 
-
+// Method for search, calls recursive search
 bool BST::search(const int & item) const
 {
    BinNode * locptr = myRoot;
@@ -25,6 +25,7 @@ bool BST::search(const int & item) const
    return search(item, locptr);
 }
 
+// Recursive method for search
 bool BST::search(const int & item, BinNode * locptr) const
 {
    // If pointer is invalid return false
@@ -69,60 +70,69 @@ void BST::insert(const int & item)
       cout << "Item already in the tree\n";
 }
 
+// inOrder method client call
 void BST::inOrder()
 {
    BinNode * locptr = myRoot;
-   if (locptr == NULL)
+   if (locptr == NULL) // No node here
       return;
-   inOrder(locptr);
+
+   inOrder(locptr); // call recursive search
 }
 
+// inOrder private recursive method
 void BST::inOrder(BinNode * locptr)
 {
-   if(locptr == NULL)
+   if(locptr == NULL) // No node here
       return;
-   inOrder(locptr->left);
-   cout << locptr->data << ", ";
-   inOrder(locptr->right);
+
+   inOrder(locptr->left); // decend left
+   cout << locptr->data << ", "; // print node value
+   inOrder(locptr->right); // decend right
 
 }
 
+// preOrder method client call
 void BST::preOrder()
 {
    BinNode * locptr = myRoot;
-   if (locptr == NULL)
+   if (locptr == NULL) // No node here
       return;
-   preOrder(locptr);
+
+   preOrder(locptr); // call recursive method
 }
 
+// preOrder private recursive method
 void BST::preOrder(BinNode * locptr)
 {
-   if(locptr == NULL)
+   if(locptr == NULL) // No node here
       return;
 
-   cout << locptr->data << ", ";
-   preOrder(locptr->left);
-   preOrder(locptr->right);
+   cout << locptr->data << ", "; // print node value
+   preOrder(locptr->left); // decend left
+   preOrder(locptr->right); // decend right
 
 }
 
+// nodeCount method client call
 int BST::nodeCount()
 {
-   nodes = 0;
+   int nodes = 0;
    BinNode * locptr = myRoot;
-   if (locptr == NULL)
+   if (locptr == NULL) // No node here
       return -1;
 
-   return nodeCount(locptr);
+   return nodeCount(locptr, nodes); // call recursive method
 }
 
-int BST::nodeCount(BinNode * locptr)
+// nodeCount private recursive method
+int BST::nodeCount(BinNode * locptr, int nodes)
 {
-   if(locptr == NULL)
+   if(locptr == NULL) // No node here
       return nodes;
 
-   nodes++;
-   nodeCount(locptr->left);
-   nodeCount(locptr->right);
-   return nodes;
+   nodes++; // Increment count
+   nodes = nodeCount(locptr->left, nodes); // decend left
+   nodes = nodeCount(locptr->right, nodes); // decend right
+   return nodes; // return final count
 }

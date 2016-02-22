@@ -42,13 +42,12 @@ private:
 
    /***** Data Members *****/
    BinNode * myRoot;
-   int nodes;
 
    // Private methods for programming assignment
    bool search(const int & item, BinNode * locptr) const;
    void inOrder(BinNode * locptr);
    void preOrder(BinNode * locptr);
-   int nodeCount(BinNode * locptr);
+   int nodeCount(BinNode * locptr, int nodes);
 
 }; // end of class declaration
 
